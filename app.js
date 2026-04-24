@@ -163,6 +163,9 @@ app.use((req, res, next) => {
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // ✅ Routes
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
 app.use("/api/auth", AuthRouter);
 app.use("/store", StoreRouter);
 app.use("/host", HostRouter);
